@@ -1,0 +1,36 @@
+$main-blue: #abc3ea;
+$dark-blue: #428896;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: $main-blue;
+  font-family: monospace;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+// #quizbox {
+//   height: 400px;
+//   width: 800px;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   border: $dark-blue solid 2px;
+// }
+//
+// #characterDisplay {
+//   background-color: white;
+//   color: $dark-blue;
+//   width: 200px;
+//   height: 200px;
+//   margin: auto;
+//   font-size: 75px;
+//   text-align: center;
+//   vertical-align: middle;
+//   line-height: 200px;
+// }
