@@ -8,7 +8,8 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        <h1>These words are from App.js</h1>
+        {/* Make this a NavBar component so that App.js only contains components */}
+        <h1>Hiragana/Katakana Quiz</h1>
         <QuizBox />
       </div>
     )

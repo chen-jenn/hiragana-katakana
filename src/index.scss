@@ -9,20 +9,26 @@ html, body {
   font-family: monospace;
 }
 
-main {
+.App {
   display: flex;
-  justify-content: center;
+  background-color: $dark-blue;
+  margin: 10px;
+  padding: 5px;
+
+  h1 {
+    margin: 0px;
+  }
 }
 
-// #quizbox {
-//   height: 400px;
-//   width: 800px;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   border: $dark-blue solid 2px;
-// }
-//
+.Quizbox {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 800px;
+  flex-direction: column;
+  border: $dark-blue solid 2px;
+}
+
 // #characterDisplay {
 //   background-color: white;
 //   color: $dark-blue;
