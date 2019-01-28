@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-
-// Import all your components to the App.js 
-// import { QuizBox } from "./QuizBox";
-// import { AnswerRevealBox } from "./AnswerRevealBox"
+import { QuizBox } from "./QuizBox";
+// import { AnswerRevealBox } from "./AnswerRevealBox";
+// import { SubmitBox } from "./SubmitBox";
+// import { ProgressBar } from "./ProgressBar";
 
 class App extends Component {
   render(){
     return(
       <div className="App">
-        <h1>Hello</h1>
+        <h1>These words are from App.js</h1>
+        <QuizBox />
       </div>
     )
   }
