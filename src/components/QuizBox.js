@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import readings from "../data/readings.js"
+import SubmitForm from "./SubmitForm";
+import readings from "../data/readings.js";
 
 function randomChar(obj){
   // Makes keys into an array
@@ -21,7 +22,11 @@ class QuizBox extends Component {
   render(){
     return(
       <main className="QuizBox">
-        <div>{randomChar(this.state.allData)}</div>
+        <div>
+          <h1>{randomChar(this.state.allData)}</h1>
+          <SubmitForm /> 
+        </div>
+        quizbox text
       </main>
     )
   }
