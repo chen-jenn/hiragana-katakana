@@ -25,4 +25,4 @@ function SubmitForm(props){
   );
 }
 
-export default SubmitForm;
+export { SubmitForm };

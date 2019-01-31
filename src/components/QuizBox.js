@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import SubmitForm from "./SubmitForm";
+import { AnswerRevealBox } from "./AnswerRevealBox";
+import { ProgressBar } from "./ProgressBar";
+import { SubmitForm } from "./SubmitForm";
 import readings from "../data/readings.js";
 
 function randomChar(obj){
@@ -15,6 +17,8 @@ class QuizBox extends Component {
   constructor(props){
     super(props);
     this.state = {
+      currentChar: "currentChar", //to be used in QuizBox component
+      prevChar: "prevChar", // to be used in AnswerRevealBox component
       allData: readings
     }
   }
@@ -24,7 +28,8 @@ class QuizBox extends Component {
       <main className="QuizBox">
         <div>
           <h1>{randomChar(this.state.allData)}</h1>
-          <SubmitForm /> 
+          <AnswerRevealBox char={this.state.prevChar}/>
+          <SubmitForm />
         </div>
         quizbox text
       </main>
