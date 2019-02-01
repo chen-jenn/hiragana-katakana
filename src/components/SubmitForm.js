@@ -1,28 +1,36 @@
 import React from 'react';
 
-function SubmitForm(props){
-  const {onSubmit = () => {}} = props;
+class SubmitForm extends React.Component {
+  constructor(props){
+     super(props);
+     this.state = {
+      inputAnswer: "" // Gets sent back to QuizBox
+     };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    const { currentTarget } = event;
-    const fD = new FormData(currentTarget);
-
-    onSubmit({
-      answer: fD.get("body")
-    })
-
-    // When the submit button is clicked, the form should reset, and the next character should be displayed.
-    // Previous character then be displayed in the AnswerRevealBox component
-    currentTarget.reset()
+     this.handleSubmitBtn = this.handleSubmitBtn.bind(this);
+     this.handleFieldChange = this.handleFieldChange.bind(this);
   }
 
-  return (
-    <form onSubmit={handleSubmit} className="SubmitForm">
-      <input type="text" name="answer"></input><br></br>
-      <input type="submit" value="Submit"/>
-    </form>
-  );
+  handleFieldChange(event){
+    const { currentTarget } = event;
+    this.setState({ inputAnswer: currentTarget.value })
+  }
+
+  handleSubmitBtn(event){
+    event.preventDefault();
+    // Use this.state.inputAnswer in QuizBox to verify if the answer is correct
+    console.log(this.state.inputAnswer); 
+    this.setState({ inputAnswer: "" });
+  }
+
+  render(){
+    return (
+      <form className="SubmitForm">
+        <input type="text" name="answer" value={this.state.inputAnswer} onChange={this.handleFieldChange}></input><br></br>
+        <input type="submit" value="Submit" onClick={this.handleSubmitBtn}/>
+      </form>
+    );
+  }
 }
 
 export { SubmitForm };
