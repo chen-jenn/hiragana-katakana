@@ -18,14 +18,22 @@ class QuizBox extends Component {
     super(props);
     this.state = {
       currentChar: randomChar(readings), //to be used in QuizBox component
-      prevChar: "" // to be used in AnswerRevealBox component
+      prevChar: "", // to be used in AnswerRevealBox component
+      prevCharRomaji: "",
+      inputAnswer: ""
     }
 
     this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   saveAnswer(answerToSave){
-    this.setState({ prevChar: answerToSave })
+    // Saves user's answer in the state, but also switches out your currentChar by calling the randomChar function
+    this.setState({
+      currentchar: randomChar(readings),
+      prevChar: this.state.currentChar,
+      prevCharRomaji: readings[this.state.currentChar],
+      inputAnswer: answerToSave
+     });
   }
 
   render(){
@@ -34,10 +42,9 @@ class QuizBox extends Component {
         <div>
           <h1>{this.state.currentChar}</h1>
           <SubmitForm handleSubmit={this.saveAnswer}/>
-          <AnswerRevealBox char={this.state.prevChar}/>
+          <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
         </div>
-        {console.log(this.state.prevChar)}
-        <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.prevChar}</h5>
+        <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.inputAnswer}</h5>
       </main>
     )
   }

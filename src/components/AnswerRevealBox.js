@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 
 class AnswerRevealBox extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
       <div className="AnswerRevealBox">
-        <h6>From AnswerRevealBox: {this.props.char}</h6>
+        <h6 style={{ color: "purple", fontSize: "22px"}}>
+          {/* Adjust to allow for a list of romaji spellings */}
+          From AnswerRevealBox: {this.props.prevChar} - {this.props.prevCharRomaji}
+        </h6>
       </div>
     )
   }
