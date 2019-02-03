@@ -1,14 +1,5 @@
 import React, { Component } from "react";
 
-// function test(arg){
-//   if (Array.isArray(arg) === true){
-//     //display with comma in between; append to string
-//     return arg.join(", ");
-//   } else {
-//     return "Argument not an array";
-//   }
-// }
-
 class AnswerRevealBox extends Component {
   render(){
     return(
@@ -19,7 +10,7 @@ class AnswerRevealBox extends Component {
           {Array.isArray(this.props.prevCharRomaji) ? (
             ` - ${this.props.prevCharRomaji.join(", ")}`
           ) : (
-            this.props.prevCharRomaji
+            ` - ${this.props.prevCharRomaji}`
           )}
         </h6>
       </div>
