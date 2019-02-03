@@ -20,6 +20,12 @@ class QuizBox extends Component {
       currentChar: randomChar(readings), //to be used in QuizBox component
       prevChar: "" // to be used in AnswerRevealBox component
     }
+
+    this.saveAnswer = this.saveAnswer.bind(this);
+  }
+
+  saveAnswer(answerToSave){
+    this.setState({ prevChar: answerToSave })
   }
 
   render(){
@@ -27,10 +33,11 @@ class QuizBox extends Component {
       <main className="QuizBox">
         <div>
           <h1>{this.state.currentChar}</h1>
-          <SubmitForm />
+          <SubmitForm handleSubmit={this.saveAnswer}/>
           <AnswerRevealBox char={this.state.prevChar}/>
         </div>
-        quizbox text
+        {console.log(this.state.prevChar)}
+        <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.prevChar}</h5>
       </main>
     )
   }

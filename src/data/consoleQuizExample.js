@@ -1,4 +1,4 @@
-// Example of doing a quiz through the console and browser popups; to modify and apply components
+slee// Example of doing a quiz through the console and browser popups; to modify and apply components
 
 const readings = {
   "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
