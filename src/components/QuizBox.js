@@ -64,7 +64,7 @@ class QuizBox extends Component {
           <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
         </div>
         {/* <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.inputAnswer}</h5> */}
-        {this.props.prevCharRomaji ? (""):
+        {(this.state.inputAnswer === "") ? (""):
           (this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer))}
 
       </main>
