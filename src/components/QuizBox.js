@@ -4,13 +4,32 @@ import { AnswerRevealBox } from "./AnswerRevealBox";
 import { SubmitForm } from "./SubmitForm";
 import readings from "../data/readings.js";
 
+
 function randomChar(obj){
   // Makes keys into an array
-  let chars = Object.keys(obj)
+  const chars = Object.keys(obj);
   let randomIndex = Math.floor(Math.random()*chars.length);
   let random = chars[randomIndex];
-  // delete obj[random];
+
   return random;
+}
+
+function checkAnswer(answer, input){
+  if (Array.isArray(answer)){
+    for (let i of answer){
+      if (input[i] === answer){
+        return `<h5>Correct! {this.state.inputAnswer}</h5>`
+      } else {
+        return `<h5>Incorrect!</h5>`
+      }
+    }
+  } else {
+    if (input === answer){
+      return `<h5>Correct! {this.state.inputAnswer}</h5>`
+    } else {
+      return `<h5>Incorrect!</h5>`
+    }
+  }
 }
 
 class QuizBox extends Component {
@@ -22,14 +41,13 @@ class QuizBox extends Component {
       prevCharRomaji: "",
       inputAnswer: ""
     }
-
     this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   saveAnswer(answerToSave){
     // Saves user's answer in the state, but also switches out your currentChar by calling the randomChar function
     this.setState({
-      currentchar: randomChar(readings),
+      currentChar: randomChar(readings),
       prevChar: this.state.currentChar,
       prevCharRomaji: readings[this.state.currentChar],
       inputAnswer: answerToSave

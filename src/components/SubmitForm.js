@@ -20,7 +20,6 @@ class SubmitForm extends React.Component {
   handleSubmitBtn(event){
     event.preventDefault();
     // Use this.state.inputAnswer in QuizBox to verify if the answer is correct
-    // console.log(`From <SubmitForm/>: ${this.state.inputAnswer}`);
     this.setState({ answerToSave: this.props.handleSubmit(this.state.inputAnswer) })
     this.setState({ inputAnswer: "" });
   }
