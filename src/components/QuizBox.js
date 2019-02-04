@@ -14,24 +14,6 @@ function randomChar(obj){
   return random;
 }
 
-function checkAnswer(answer, input){
-  if (Array.isArray(answer)){
-    for (let i of answer){
-      if (input[i] === answer){
-        return `<h5>Correct! {this.state.inputAnswer}</h5>`
-      } else {
-        return `<h5>Incorrect!</h5>`
-      }
-    }
-  } else {
-    if (input === answer){
-      return `<h5>Correct! {this.state.inputAnswer}</h5>`
-    } else {
-      return `<h5>Incorrect!</h5>`
-    }
-  }
-}
-
 class QuizBox extends Component {
   constructor(props){
     super(props);
@@ -42,6 +24,25 @@ class QuizBox extends Component {
       inputAnswer: ""
     }
     this.saveAnswer = this.saveAnswer.bind(this);
+    this.checkAnswer = this.checkAnswer.bind(this);
+  }
+
+  checkAnswer(answer, input){
+    if (Array.isArray(answer)){
+      for (let i of answer){
+        if (input[i] === answer){
+          return `<h5>Correct! ${input}</h5>`
+        } else {
+          return `<h5>Incorrect!</h5>`
+        }
+      }
+    } else {
+      if (input === answer){
+        return `<h5>Correct! ${input}</h5>`
+      } else {
+        return `<h5>Incorrect!</h5>`
+      }
+    }
   }
 
   saveAnswer(answerToSave){
@@ -62,7 +63,10 @@ class QuizBox extends Component {
           <SubmitForm handleSubmit={this.saveAnswer}/>
           <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
         </div>
-        <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.inputAnswer}</h5>
+        {/* <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.inputAnswer}</h5> */}
+        {this.props.prevCharRomaji ? (""):
+          (this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer))}
+
       </main>
     )
   }
