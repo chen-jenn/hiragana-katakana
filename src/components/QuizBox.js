@@ -4,7 +4,6 @@ import { AnswerRevealBox } from "./AnswerRevealBox";
 import { ProgressBar } from "./ProgressBar";
 import readings from "../data/readings.js";
 
-
 function randomChar(obj){
   // Makes keys into an array
   const chars = Object.keys(obj);
@@ -21,23 +20,32 @@ class QuizBox extends Component {
       currentChar: randomChar(readings), //to be used in QuizBox component
       prevChar: "", // to be used in AnswerRevealBox component
       prevCharRomaji: "",
-      inputAnswer: ""
+      inputAnswer: "",
+      correct: 0,
+      incorrect: 0
     }
     this.saveAnswer = this.saveAnswer.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
   }
 
+
   checkAnswer(answer, input){
+    // If more than one reading
     if (Array.isArray(answer)){
       if (answer.includes(input)){
+        this.setState({ correct: this.state.correct + 1 });
         return `<h5>Correct! ${input}</h5>`
       } else {
+        this.setState({ correct: this.state.incorrect + 1 });
         return `<h5>Incorrect!</h5>`
       }
+      // Only one reading
     } else {
         if (input === answer){
+          this.setState({ correct: this.state.correct + 1 });
           return `<h5>Correct! ${input}</h5>`
         } else {
+          this.setState({ correct: this.state.incorrect + 1 });
           return `<h5>Incorrect!</h5>`
         }
     }
@@ -61,10 +69,9 @@ class QuizBox extends Component {
           <SubmitForm handleSubmit={this.saveAnswer}/>
           <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
         </div>
-        {/* <h5 style={{fontSize: "22px", color: "red"}}>You answered: {this.state.inputAnswer}</h5> */}
         {(this.state.inputAnswer === "") ? (""):
           (this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer))}
-
+          <ProgressBar numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}/>
       </main>
     )
   }
