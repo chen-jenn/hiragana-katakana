@@ -21,6 +21,7 @@ class QuizBox extends Component {
       prevChar: "", // to be used in AnswerRevealBox component
       prevCharRomaji: "",
       inputAnswer: "",
+      output: "",
       correct: 0,
       incorrect: 0
     }
@@ -33,20 +34,28 @@ class QuizBox extends Component {
     // If more than one reading
     if (Array.isArray(answer)){
       if (answer.includes(input)){
-        this.setState({ correct: this.state.correct + 1 });
-        return `<h5>Correct! ${input}</h5>`
+        this.setState({
+          correct: this.state.correct + 1,
+          output: `<h5>Correct! ${input}</h5>`
+         });
       } else {
-        this.setState({ correct: this.state.incorrect + 1 });
-        return `<h5>Incorrect!</h5>`
+        this.setState({
+          correct: this.state.incorrect + 1,
+          output: `<h5>Incorrect!</h5>`
+         });
       }
       // Only one reading
     } else {
         if (input === answer){
-          this.setState({ correct: this.state.correct + 1 });
-          return `<h5>Correct! ${input}</h5>`
+          this.setState({
+            correct: this.state.correct + 1,
+            output: `<h5>Correct! ${input}</h5>`
+           });
         } else {
-          this.setState({ correct: this.state.incorrect + 1 });
-          return `<h5>Incorrect!</h5>`
+          this.setState({
+            correct: this.state.incorrect + 1,
+            output: `<h5>Incorrect!</h5>`
+           });
         }
     }
   }
@@ -73,8 +82,7 @@ class QuizBox extends Component {
 
           <ProgressBar numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}/>
         </div>
-        {/* {(this.state.inputAnswer === "") ? (""):
-        (this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer))} */}
+        {(this.state.output === "") ? ("") : (this.state.output)}
       </main>
     )
   }
