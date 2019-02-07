@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { AnswerRevealBox } from "./AnswerRevealBox";
-// import { ProgressBar } from "./ProgressBar";
 import { SubmitForm } from "./SubmitForm";
+import { AnswerRevealBox } from "./AnswerRevealBox";
+import { ProgressBar } from "./ProgressBar";
 import readings from "../data/readings.js";
 
 
@@ -29,19 +29,17 @@ class QuizBox extends Component {
 
   checkAnswer(answer, input){
     if (Array.isArray(answer)){
-      for (let i of answer){
-        if (input[i] === answer){
-          return `<h5>Correct! ${input}</h5>`
-        } else {
-          return `<h5>Incorrect!</h5>`
-        }
-      }
-    } else {
-      if (input === answer){
+      if (answer.includes(input)){
         return `<h5>Correct! ${input}</h5>`
       } else {
         return `<h5>Incorrect!</h5>`
       }
+    } else {
+        if (input === answer){
+          return `<h5>Correct! ${input}</h5>`
+        } else {
+          return `<h5>Incorrect!</h5>`
+        }
     }
   }
 
