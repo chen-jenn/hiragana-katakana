@@ -59,6 +59,8 @@ class QuizBox extends Component {
       prevCharRomaji: readings[this.state.currentChar],
       inputAnswer: answerToSave
      });
+
+     this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer);
   }
 
   render(){
@@ -68,10 +70,11 @@ class QuizBox extends Component {
           <h1>{this.state.currentChar}</h1>
           <SubmitForm handleSubmit={this.saveAnswer}/>
           <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
-        </div>
-        {(this.state.inputAnswer === "") ? (""):
-          (this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer))}
+
           <ProgressBar numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}/>
+        </div>
+        {/* {(this.state.inputAnswer === "") ? (""):
+        (this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer))} */}
       </main>
     )
   }
