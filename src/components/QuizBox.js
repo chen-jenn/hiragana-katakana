@@ -82,7 +82,7 @@ class QuizBox extends Component {
 
           <ProgressBar numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}/>
         </div>
-        {(this.state.output === "") ? ("") : (this.state.output)}
+        {(this.state.output === "") ? ("") : (<div dangerouslySetInnerHTML={{__html: this.state.output}} />)}
       </main>
     )
   }
