@@ -67,9 +67,9 @@ class QuizBox extends Component {
       prevChar: this.state.currentChar,
       prevCharRomaji: readings[this.state.currentChar],
       inputAnswer: answerToSave
-     });
-
-     this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer);
+    }, () => {
+      this.checkAnswer(this.state.prevCharRomaji, this.state.inputAnswer);
+    });
   }
 
   render(){
