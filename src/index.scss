@@ -24,21 +24,32 @@ html, body {
 
   .QuizBox{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    background-color: pink;
+    // background-color: pink;
+    margin: auto;
     height: 500px;
-    width: 500px;
+    width: 600px;
 
     .display{
-      background-color: red;
-      margin: auto; 
-      font-size: 22px;
       height: 100px;
       width: 100px;
+      line-height: 100px;
+      text-align: center;
+      margin: auto;
+      font-size: 50px;
     }
 
     .SubmitForm{
       background-color: green;
+    }
+
+    .AnswerRevealBox{
+      background-color: orange;
+    }
+
+    .ProgressBar {
+      background-color: yellow;
     }
   }
 }
