@@ -40,7 +40,7 @@ class QuizBox extends Component {
          });
       } else {
         this.setState({
-          correct: this.state.incorrect + 1,
+          inorrect: this.state.incorrect + 1,
           output: `<h5>Incorrect!</h5>`
          });
       }
@@ -53,7 +53,7 @@ class QuizBox extends Component {
            });
         } else {
           this.setState({
-            correct: this.state.incorrect + 1,
+            incorrect: this.state.incorrect + 1,
             output: `<h5>Incorrect!</h5>`
            });
         }
