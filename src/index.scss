@@ -16,7 +16,7 @@ html, body {
   border: $dark-blue 5px solid;
   margin: 20px;
   padding: 5px;
-  height: 500px;
+  height: 600px;
 
   h1 {
     margin: auto;
@@ -41,7 +41,11 @@ html, body {
     }
 
     .SubmitForm{
+      display: flex;
+      flex-direction: column;
+
       input[type="text"]{
+        color: grey;
         border: $dark-blue solid 1px;
         font-size: 20px;
         height: 30px;
@@ -49,14 +53,17 @@ html, body {
 
       input[type="submit"]{
         font-size: 30px;
+        width: 200px;
         padding: 7px;
-        margin: 10px;
-        border: none;
+        border: $dark-blue 3px solid;
         border-radius: 5px;
         color: white;
         background-color: $dark-blue;
 
         &:hover{
+          color: $dark-blue;
+          background-color: white;
+          border: $dark-blue 3px solid;
           cursor: pointer;
         }
       }
@@ -68,6 +75,7 @@ html, body {
 
     .ProgressBar {
       background-color: yellow;
+      height: 150px;
     }
   }
 }

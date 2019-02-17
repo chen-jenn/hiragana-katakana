@@ -35,3 +35,22 @@ class SubmitForm extends React.Component {
 }
 
 export { SubmitForm };
+
+
+
+// My funfetti. After you install react-dom-confetti lol
+// import Confetti from 'react-dom-confetti';
+//
+// const config = {
+//   angle: 90,
+//   spread: "162",
+//   startVelocity: "50",
+//   elementCount: "136",
+//   dragFriction: 0.1,
+//   duration: "4470",
+//   delay: 0,
+//   width: "19px",
+//   height: "41px",
+//   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+// };
+// return <Confetti active={ someProp } config={ config }/>
