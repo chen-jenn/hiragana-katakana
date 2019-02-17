@@ -4,7 +4,7 @@ class AnswerRevealBox extends Component {
   render(){
     return(
       <div className="AnswerRevealBox">
-        <h6 style={{ color: "purple", fontSize: "22px"}}>
+        <h6>
           {/* Adjust to allow for a list of romaji spellings */}
           From AnswerRevealBox: {this.props.prevChar}
           {Array.isArray(this.props.prevCharRomaji) ? (

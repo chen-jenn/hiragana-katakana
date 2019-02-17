@@ -5,7 +5,7 @@ class ProgressBar extends Component {
     return(
       <div className="ProgressBar">
         {/* TO DO: Add visual progress bar */}
-        <h1 style={{ color: "green", fontSize: "22px"}}>Progress Bar:{this.props.numAnswered}/{this.props.total}</h1>
+        <h1>Progress Bar:{this.props.numAnswered}/{this.props.total}</h1>
         <h2>Correct: {this.props.correct}</h2>
         <h2>Incorrect: {this.props.incorrect}</h2>
       </div>

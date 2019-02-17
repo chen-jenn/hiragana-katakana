@@ -76,7 +76,7 @@ class QuizBox extends Component {
     return(
       <main className="QuizBox">
         <div>
-          <h1>{this.state.currentChar}</h1>
+          <div className="display">{this.state.currentChar}</div>
           <SubmitForm handleSubmit={this.saveAnswer}/>
           <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
           {(this.state.output === "") ? ("") : (<div dangerouslySetInnerHTML={{__html: this.state.output}} />)}

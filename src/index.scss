@@ -1,31 +1,44 @@
-$main-blue: #abc3ea;
-$dark-blue: #428896;
+$main-blue: #c0d1da;
+$dark-blue: #6f90a0;
 
 html, body {
   margin: 0;
   padding: 0;
-  color: white;
+  color: $dark-blue;
   background-color: $main-blue;
-  font-family: monospace;
+  font-family: arial;
 }
 
 .App {
   display: flex;
-  background-color: $dark-blue;
-  // margin: 10px;
-  // padding: 5px;
+  flex-direction: column;
+  background-color: #e7eded;
+  border: $dark-blue 5px solid;
+  margin: 20px;
+  padding: 5px;
+  height: 500px;
 
   h1 {
-    margin: 10px;
+    margin: auto;
   }
-}
 
-.Quizbox {
-  // display: flex;
-  // justify-content: center;
-  height: 500px;
-  width: 500px;
-  background-color: red;
-  flex-direction: column;
-  border: $dark-blue solid 2px;
+  .QuizBox{
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    height: 500px;
+    width: 500px;
+
+    .display{
+      background-color: red;
+      margin: auto; 
+      font-size: 22px;
+      height: 100px;
+      width: 100px;
+    }
+
+    .SubmitForm{
+      background-color: green;
+    }
+  }
 }
