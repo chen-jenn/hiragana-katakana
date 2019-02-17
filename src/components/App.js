@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { QuizBox } from "./QuizBox";
-// import { AnswerRevealBox } from "./AnswerRevealBox";
-// import { SubmitBox } from "./SubmitBox";
-// import { ProgressBar } from "./ProgressBar";
+import '../index.scss';
 
 class App extends Component {
   render(){
