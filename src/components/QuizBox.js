@@ -79,14 +79,13 @@ class QuizBox extends Component {
           <h1>{this.state.currentChar}</h1>
           <SubmitForm handleSubmit={this.saveAnswer}/>
           <AnswerRevealBox prevChar={this.state.prevChar} prevCharRomaji={this.state.prevCharRomaji}/>
-
+          {(this.state.output === "") ? ("") : (<div dangerouslySetInnerHTML={{__html: this.state.output}} />)}
           <ProgressBar
             numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}
             correct={this.state.correct}
             incorrect={this.state.incorrect}
           />
         </div>
-        {(this.state.output === "") ? ("") : (<div dangerouslySetInnerHTML={{__html: this.state.output}} />)}
       </main>
     )
   }
