@@ -28,7 +28,7 @@ class SubmitForm extends React.Component {
     return (
       <form className="SubmitForm">
         <input type="text" name="answer" value={this.state.inputAnswer} onChange={this.handleFieldChange}></input><br></br>
-        <input type="submit" value="Submit" onClick={this.handleSubmitBtn}/>
+        <input type="submit" value="SUBMIT" onClick={this.handleSubmitBtn}/>
       </form>
     );
   }

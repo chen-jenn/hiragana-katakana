@@ -41,7 +41,25 @@ html, body {
     }
 
     .SubmitForm{
-      background-color: green;
+      input[type="text"]{
+        border: $dark-blue solid 1px;
+        font-size: 20px;
+        height: 30px;
+      }
+
+      input[type="submit"]{
+        font-size: 30px;
+        padding: 7px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: $dark-blue;
+
+        &:hover{
+          cursor: pointer;
+        }
+      }
     }
 
     .AnswerRevealBox{
