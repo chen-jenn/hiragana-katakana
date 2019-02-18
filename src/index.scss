@@ -15,20 +15,18 @@ html, body {
   background-color: #e7eded;
   border: $dark-blue 5px solid;
   margin: 20px;
-  padding: 5px;
-  height: 600px;
+  padding: 20px;
 
   h1 {
-    margin: auto;
+    text-align: center;
   }
 
   .QuizBox{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     // background-color: pink;
     margin: auto;
-    height: 500px;
     width: 600px;
 
     .display{
@@ -43,12 +41,14 @@ html, body {
     .SubmitForm{
       display: flex;
       flex-direction: column;
+      align-items: center;
 
       input[type="text"]{
         color: grey;
         border: $dark-blue solid 1px;
         font-size: 20px;
         height: 30px;
+        width: 100%;
       }
 
       input[type="submit"]{
@@ -71,11 +71,15 @@ html, body {
 
     .AnswerRevealBox{
       background-color: orange;
+      height: 150px;
+      width: 400px;
     }
 
     .ProgressBar {
       background-color: yellow;
+      text-align: center;
       height: 150px;
+      width: 400px;
     }
   }
 }
