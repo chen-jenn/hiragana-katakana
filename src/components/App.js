@@ -7,6 +7,7 @@ class App extends Component {
     return(
       <div className="App">
         <h1>HIRAGANA & KATAKANA QUIZ</h1>
+        Start by typing the Romaji reading in the box
         <QuizBox />
       </div>
     )

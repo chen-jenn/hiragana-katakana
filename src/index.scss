@@ -16,10 +16,7 @@ html, body {
   border: $dark-blue 5px solid;
   margin: 20px;
   padding: 20px;
-
-  h1 {
-    text-align: center;
-  }
+  text-align: center;
 
   .QuizBox{
     display: flex;
@@ -42,6 +39,7 @@ html, body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 10px;
 
       input[type="text"]{
         color: grey;
@@ -70,7 +68,8 @@ html, body {
     }
 
     .AnswerRevealBox{
-      background-color: orange;
+      background-color: #c0d1da;
+      text-align: center;
       height: 150px;
       width: 400px;
     }

@@ -31,17 +31,19 @@ class QuizBox extends Component {
 
 
   checkAnswer(answer, input){
+    const responses = ["Nope!", "Incorrect!", "Another time", "You can do better than that"]
+
     // If more than one reading
     if (Array.isArray(answer)){
       if (answer.includes(input)){
         this.setState({
           correct: this.state.correct + 1,
-          output: `<h5>Correct! ${input}</h5>`
+          output: `<h5>Correct!</h5>`
          });
       } else {
         this.setState({
           inorrect: this.state.incorrect + 1,
-          output: `<h5>Incorrect!</h5>`
+          output: `<h5>${responses[Math.floor(Math.random()*responses.length)]}</h5>`
          });
       }
       // Only one reading
@@ -49,12 +51,12 @@ class QuizBox extends Component {
         if (input === answer){
           this.setState({
             correct: this.state.correct + 1,
-            output: `<h5>Correct! ${input}</h5>`
+            output: `<h5>Correct!</h5>`
            });
         } else {
           this.setState({
             incorrect: this.state.incorrect + 1,
-            output: `<h5>Incorrect!</h5>`
+            output: `<h5>${responses[Math.floor(Math.random()*responses.length)]}</h5>`
            });
         }
     }
@@ -82,7 +84,6 @@ class QuizBox extends Component {
             prevCharRomaji={this.state.prevCharRomaji}
             htmlOutput={this.state.output}
           />
-          {/* {(this.state.output === "") ? ("") : (<div dangerouslySetInnerHTML={{__html: this.state.output}} />)} */}
           <ProgressBar
             numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}
             correct={this.state.correct}
