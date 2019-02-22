@@ -10,6 +10,10 @@ html, body {
   font-family: arial;
 }
 
+p {
+  font-size: 20px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -84,10 +88,10 @@ html, body {
       height: 25px;
       width: 50%;
       margin: 5px 0px 10px 0px;
+    }
 
-      .filler {
-
-      }
+    .ProgressCounter {
+      font-weight: bold;
     }
   }
 }
