@@ -5,13 +5,24 @@ import { ProgressBar } from "./ProgressBar";
 import { ProgressCounter } from "./ProgressCounter";
 import readings from "../data/readings.js";
 
+// How do i NOT use a global variable like this??
+let globalUsed = [];
+
+// This can definitely be optimized, you don't want to have to build the array every single time you call this function...
 function randomChar(obj){
   // Makes keys into an array
   const chars = Object.keys(obj);
   let randomIndex = Math.floor(Math.random()*chars.length);
   let random = chars[randomIndex];
 
-  return random;
+  if (globalUsed.includes(random)){ //if the character has already been used in the QuizBox display, then pick another random number
+    randomIndex = Math.floor(Math.random()*chars.length);
+    random = chars[randomIndex]
+    return random;
+  } else {
+    globalUsed.push(random)
+    return random;
+  }
 }
 
 class QuizBox extends Component {

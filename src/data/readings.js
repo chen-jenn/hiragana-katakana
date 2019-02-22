@@ -1,3 +1,9 @@
+// Temporary readings for checking repeats
+// export default {
+//   "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
+//   "ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o"
+// }
+
 export default {
     "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
     "ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o",

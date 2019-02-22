@@ -6,6 +6,7 @@ In other words, an exact copy of https://www.gyford.com/japanese/, built using R
 * scss
 
 ## TO DO:
-1. Add visual progress bar onto the <ProgressBar/> component
-2. Only pick value from the array of characters once. Without modifying the original "readings" data object
+
+1. Only pick value from the array of characters once. Without modifying the original "readings" data object
+2. Don't let progress bar go beyond 100% lol
 3. Use react-dom-confetti
