@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { SubmitForm } from "./SubmitForm";
 import { AnswerRevealBox } from "./AnswerRevealBox";
 import { ProgressBar } from "./ProgressBar";
+import { ProgressCounter } from "./ProgressCounter";
 import readings from "../data/readings.js";
 
 function randomChar(obj){
@@ -85,7 +86,12 @@ class QuizBox extends Component {
             htmlOutput={this.state.output}
           />
           <ProgressBar
-            numAnswered={this.state.correct + this.state.incorrect} total={Object.keys(readings).length}
+            numAnswered={this.state.correct + this.state.incorrect}
+            total={Object.keys(readings).length}
+          />
+          <ProgressCounter
+            numAnswered={this.state.correct + this.state.incorrect}
+            total={Object.keys(readings).length}
             correct={this.state.correct}
             incorrect={this.state.incorrect}
           />

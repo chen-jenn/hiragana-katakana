@@ -6,13 +6,10 @@ class ProgressBar extends Component {
 
     return(
       <div className="ProgressBar">
-        <div
-          className="filler"
-          style={{backgroundColor: "#447187", height: "100%", width: `${calcWidth}%`}}>
-        </div>
-        {/* <h1>Progress Bar:{this.props.numAnswered}/{this.props.total}</h1>
-        <h2>Correct: {this.props.correct}</h2>
-        <h2>Incorrect: {this.props.incorrect}</h2> */}
+          <div
+            className="filler"
+            style={{backgroundColor: "#447187", height: "100%", width: `${calcWidth}%`}}>
+          </div>
       </div>
     )
   }
