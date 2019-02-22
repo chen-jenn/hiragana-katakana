@@ -31,19 +31,19 @@ class QuizBox extends Component {
 
 
   checkAnswer(answer, input){
-    const responses = ["Nope!", "Incorrect!", "Another time", "You can do better than that"]
+    const responses = ["Nope!", "Incorrect!", "Another time", "You can do better than that", "Terrible", "USELESS"]
 
     // If more than one reading
     if (Array.isArray(answer)){
       if (answer.includes(input)){
         this.setState({
           correct: this.state.correct + 1,
-          output: `<h5>Correct!</h5>`
+          output: `<h5 id="correct">Correct!</h5>`
          });
       } else {
         this.setState({
           inorrect: this.state.incorrect + 1,
-          output: `<h5>${responses[Math.floor(Math.random()*responses.length)]}</h5>`
+          output: `<h5 id="incorrect">${responses[Math.floor(Math.random()*responses.length)]}</h5>`
          });
       }
       // Only one reading
@@ -51,12 +51,12 @@ class QuizBox extends Component {
         if (input === answer){
           this.setState({
             correct: this.state.correct + 1,
-            output: `<h5>Correct!</h5>`
+            output: `<h5 id="correct">Correct!</h5>`
            });
         } else {
           this.setState({
             incorrect: this.state.incorrect + 1,
-            output: `<h5>${responses[Math.floor(Math.random()*responses.length)]}</h5>`
+            output: `<h5 id="incorrect">${responses[Math.floor(Math.random()*responses.length)]}</h5>`
            });
         }
     }
