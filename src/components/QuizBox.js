@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Confetti from "react-dom-confetti";
 import { SubmitForm } from "./SubmitForm";
 import { AnswerRevealBox } from "./AnswerRevealBox";
 import { ProgressBar } from "./ProgressBar";
