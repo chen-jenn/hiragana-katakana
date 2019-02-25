@@ -6,6 +6,7 @@ import { ProgressBar } from "./ProgressBar";
 import { ProgressCounter } from "./ProgressCounter";
 import readings from "../data/readings.js";
 
+// const charKeys = Object.keys(readings).length; //Use this for refactoring later
 // How do i NOT use a global variable like this??
 let globalUsed = [];
 
@@ -36,7 +37,8 @@ class QuizBox extends Component {
       inputAnswer: "",
       output: "",
       correct: 0,
-      incorrect: 0
+      incorrect: 0,
+      isActive: false
     }
     this.saveAnswer = this.saveAnswer.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
@@ -73,6 +75,10 @@ class QuizBox extends Component {
            });
         }
     }
+
+    if (this.state.correct + this.state.incorrect === Object.keys(readings).length-1){
+      this.setState({isActive: true})
+    }
   }
 
   saveAnswer(answerToSave){
@@ -88,6 +94,20 @@ class QuizBox extends Component {
   }
 
   render(){
+    //Confetti configuration
+    const config = {
+  		angle: 90,
+  		spread: "162",
+  		startVelocity: "50",
+  		elementCount: "136",
+  		dragFriction: 0.1,
+  		duration: "4470",
+  		delay: 0,
+  		width: "19px",
+  		height: "41px",
+  		colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+  	};
+
     return(
       <main className="QuizBox">
           <div className="display">{this.state.currentChar}</div>
@@ -107,6 +127,7 @@ class QuizBox extends Component {
             correct={this.state.correct}
             incorrect={this.state.incorrect}
           />
+          <Confetti active={this.state.isActive} config={config} />
       </main>
     )
   }
